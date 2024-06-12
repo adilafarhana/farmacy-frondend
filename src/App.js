@@ -4,15 +4,18 @@ import AppPharmacy from './component/AppPharmacy';
 import SearchPharmacy from './component/SearchPharmacy';
 import ViewAll from './component/ViewAll';
 import DeletePharmacy from './component/DeletePharmacy';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <h5><AppPharmacy/></h5>
-      <h5><SearchPharmacy/></h5>
-      <h5><ViewAll/></h5>
-      <h5><DeletePharmacy/></h5>
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<AppPharmacy/>}/>
+    <Route path='/search' element={<SearchPharmacy/>}/>
+    <Route path='/delete' element={<DeletePharmacy/>}/>
+    <Route path='/viewall' element={<ViewAll/>}/>
+   </Routes>
+   </BrowserRouter>
   );
 }
 
